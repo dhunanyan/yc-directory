@@ -10,7 +10,7 @@ export default async function Home({
 }) {
   const { query } = await searchParams;
 
-  const posts: StartupCardType[] = await client.fetch(STARTUPS_QUERY);
+  const posts = (await client.fetch(STARTUPS_QUERY)) as StartupCardType[];
 
   return (
     <>
