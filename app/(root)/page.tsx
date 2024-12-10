@@ -1,7 +1,5 @@
 import SearchForm from "@components/SearchForm";
 import StartupCard, { type StartupCardType } from "@components/StartupCard";
-import { client } from "@sanity/lib/client";
-import { STARTUPS_QUERY } from "@sanity/lib/queries";
 
 export default async function Home({
   searchParams,
@@ -10,7 +8,19 @@ export default async function Home({
 }) {
   const { query } = await searchParams;
 
-  const posts: StartupCardType[] = await client.fetch(STARTUPS_QUERY);
+  const posts: StartupCardType[] = [
+    {
+      _id: 1,
+      _createdAt: new Date().toString(),
+      views: 55,
+      author: { _id: 1, name: "Fred" },
+      image:
+        "https://plus.unsplash.com/premium_photo-1732730224306-3b469ea9e640?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyfHx8ZW58MHx8fHx8",
+      description: "This is a description",
+      title: "We Robots",
+      category: "Robot",
+    },
+  ];
 
   return (
     <>
