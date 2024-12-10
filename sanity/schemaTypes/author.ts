@@ -5,7 +5,9 @@ export const author = defineType({
   name: "author",
   title: "Author",
   type: "document",
-  icon: UserIcon as unknown as number,
+  //eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  //@ts-ignore
+  icon: UserIcon,
   fields: [
     defineField({
       name: "id",

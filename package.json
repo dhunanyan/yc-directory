@@ -1,27 +1,27 @@
 {
-  "name": "rehabit",
+  "name": "yc-directory",
   "version": "1.0.0",
-  "description": "rehabit: Tutorial - Enterprise-ready application",
+  "description": "YC Directory: Tutorial - Enterprise-ready application",
   "author": "dhunanyan",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dhunanyan/rehabit.git"
+    "url": "git+https://github.com/dhunanyan/yc-directory.git"
   },
   "bugs": {
-    "url": "https://github.com/dhunanyan/rehabit/issues"
+    "url": "https://github.com/dhunanyan/yc-directory/issues"
   },
-  "homepage": "https://github.com/dhunanyan/rehabit#readme",
+  "homepage": "https://github.com/dhunanyan/yc-directory#readme",
   "keywords": [
     "nextjs15",
     "react",
     "typescript",
     "app-router"
   ],
+  "private": true,
   "engines": {
     "node": ">=20.0.0"
   },
-  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
