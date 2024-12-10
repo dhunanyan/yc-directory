@@ -9,9 +9,11 @@ export default async function Home({
   searchParams: Promise<{ query: string }>;
 }) {
   const { query } = await searchParams;
+  const params = { search: query || null };
 
   const { data } = (await sanityFetch({
     query: STARTUPS_QUERY,
+    params,
   })) as unknown as { data: StartupCardType[] };
 
   return (
