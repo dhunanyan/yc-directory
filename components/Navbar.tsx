@@ -1,7 +1,8 @@
-import { auth, signIn, signOut } from "@auth";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+
+import { auth, signIn, signOut } from "@/auth";
 
 const Navbar = async () => {
   const session = await auth();
@@ -29,7 +30,7 @@ const Navbar = async () => {
                   <span>Logout</span>
                 </button>
               </form>
-              <Link href={`/user/${session?.id}`}>
+              <Link href={`/user/${session?.user.id}`}>
                 <span>{session?.user?.name}</span>
               </Link>
             </>

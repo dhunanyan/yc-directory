@@ -1,15 +1,17 @@
 import React, { Suspense } from "react";
-import { Skeleton } from "@components/ui/skeleton";
-import { client } from "@sanity/lib/client";
-import { STARTUP_BY_ID_QUERY } from "@sanity/lib/queries";
-import { type StartupCardType } from "@components/StartupCard";
 import { notFound } from "next/navigation";
-import { formatDate } from "@lib/utils";
 import Link from "next/link";
 import Image from "next/image";
 
+import { Skeleton } from "@/components/ui/skeleton";
+import View from "@/components/View";
+
+import { client } from "@/sanity/lib/client";
+import { STARTUP_BY_ID_QUERY } from "@/sanity/lib/queries";
+import { type StartupCardType } from "@/components/StartupCard";
+import { formatDate } from "@/lib/utils";
+
 import markdownit from "markdown-it";
-import View from "@components/View";
 
 const md = markdownit();
 
