@@ -78,13 +78,11 @@ const StartupForm = () => {
     }
   };
 
-  const [state, formAction, isPending] = React.useActionState(
-    handleFormSubmit,
-    {
-      error: "",
-      status: "INITIAL",
-    }
-  );
+  //eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [_, formAction, isPending] = React.useActionState(handleFormSubmit, {
+    error: "",
+    status: "INITIAL",
+  });
 
   return (
     <form action={formAction} className="startup-form">
