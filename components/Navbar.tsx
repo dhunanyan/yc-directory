@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { auth, signIn, signOut } from "@/auth";
+import { BadgePlus, LogIn, LogOut } from "lucide-react";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
 const Navbar = async () => {
   const session = await auth();
@@ -14,24 +16,33 @@ const Navbar = async () => {
           <Image src="/logo.png" alt="logo" width={144} height={30} />
         </Link>
 
-        <div className="flex item-center gap-5 text-black">
+        <div className="flex items-center gap-5 text-black">
           {session && session.user ? (
             <>
               <Link href="/startup/create">
-                <span>Create</span>
+                <span className="max-sm:hidden">Create</span>
+                <BadgePlus className="size-6 sm:hidden text-red-500" />
               </Link>
               <form
                 action={async () => {
                   "use server";
                   await signOut({ redirectTo: "/" });
                 }}
+                className="flex items-center"
               >
                 <button>
-                  <span>Logout</span>
+                  <span className="max-sm:hidden">Logout</span>
+                  <LogOut className="size-6 sm:hidden text-red-500" />
                 </button>
               </form>
-              <Link href={`/user/${session?.user.id}`}>
-                <span>{session?.user?.name}</span>
+              <Link href={`/user/${session?.id}`}>
+                <Avatar className="size-10">
+                  <AvatarImage
+                    src={session?.user?.image || ""}
+                    alt={session?.user?.name || ""}
+                  />
+                  <AvatarFallback>AV</AvatarFallback>
+                </Avatar>
               </Link>
             </>
           ) : (
@@ -42,7 +53,8 @@ const Navbar = async () => {
               }}
             >
               <button>
-                <span>Login</span>
+                <span className="max-sm:hidden">Login</span>
+                <LogIn className="size-6 sm:hidden text-red-500" />
               </button>
             </form>
           )}
