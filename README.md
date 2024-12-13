@@ -25,6 +25,8 @@
 6. 🔗 [Assets](#links)
 7. 🚀 [More](#more)
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/349966cc-f424-4392-bb92-e457f44cd437/deploy-status)](https://app.netlify.com/sites/lively-valkyrie-4527ff/deploys)
+
 ## 🚨 Tutorial
 
 <a href="https://youtu.be/Zq5fmkH0T78?feature=shared" target="_blank"><img src="https://github.com/sujatagunale/EasyRead/assets/151519281/1736fca5-a031-4854-8c09-bc110e3bc16d" /></a>
